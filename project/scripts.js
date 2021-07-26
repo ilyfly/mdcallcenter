@@ -141,5 +141,83 @@ document.querySelector("form").addEventListener("submit", function (event) {
 });
 
 window.addEventListener("load", function () {
-  console.log("Document chargé !"); 
+  console.log("Document chargé !");
 });
+
+console.log(document.getElementsByClassName("box"));
+
+// ForEach :
+
+document.querySelectorAll("box").forEach((element) => {
+  element.addEventListener("click", function (e) {
+    e.target.style.transform = "scale(0.7)";
+  });
+});
+
+//addEventListner vs onclick :
+
+document.body.onclick = function () {
+  console.log("Arrêter de cliquez sur le Body! Grrrrr");
+};
+
+//Bubbling => se déclanche à la fin
+document.body.addEventListener(
+  "click",
+  function () {
+    console.log("click 1 !!!!");
+  },
+  false
+);
+//Usecapture => se déclanche au début
+document.body.addEventListener(
+  "click",
+  function () {
+    console.log("click 2 !!!!");
+  },
+  true
+);
+
+// Stop propagation
+
+document.querySelector(".box").addEventListener("click", function (e) {
+  alert("Stop propagation");
+  e.stopPropagation();
+});
+
+// removeEventListner :
+
+// BOM :
+
+console.log("Height : " + window.innerHeight);
+console.log("ScrollY : " + window.scrollY);
+//window.open("http://google.com", "Cour js", "height=600,width=800");
+//window.close();
+
+//Evénement adossés à Window :
+//alert("hello");
+//confirm("Voulez-vous vraiment appuyer ?");
+//prompt("Entrez votre nom");
+//setTimeout(function () {document.querySelector(".box").style.color="red";},2000);
+// setInterval(function () {
+//   document.body.innerHTML +=
+//     '<div style="background-color: #F2805B ;"class="box"><h2>Nouvel Boite!</h2></div>';
+// }, 1000);
+//clearInterval();
+
+document.body.addEventListener("click", function (e) {
+  e.target.remove();
+});
+
+// location :
+
+console.log(location.href);
+console.log(location.host);
+console.log(location.pathname);
+// console.log(location.search);
+//location.replace("http://google.co.ma");
+
+// Navigator :
+
+console.log(navigator.userAgent);
+
+ 

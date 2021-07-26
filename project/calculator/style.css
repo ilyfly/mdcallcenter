@@ -1,0 +1,31 @@
+
+.app
+{
+    margin:0;
+    width: 400px;
+}
+table td
+{
+    padding: 0;
+}
+button
+{
+    width: 100px;
+    height: 60px;
+    padding: 0;
+    
+}
+h3
+{
+    width: 400px;
+    height: 60px;
+    border: 2px solid black;
+    margin:auto;
+    font-size: 60px;
+    text-align: right;
+}
+#clear
+{
+    width: 400px;
+    height: 60px;
+}
