@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+      * {
+        font-family: "Pacifico", cursive;
+        font-size: 20px;
+      }
+      body {
+        text-align: center;
+        margin: 0px;
+        color: white;
+        height: 10000px;
+        width: 100%;
+      }
+      .click-event {
+        border: 1px solid black;
+        background: black;
+        transition: 0.25s ease;
+      }
+
+      p {
+        visibility: hidden;
+      }
+      .click {
+        background: chartreuse;
+        border-radius: 30px !important;
+      }
+      .mousseevent {
+        height: 50px;
+        width: 50px;
+        border: 2px solid red;
+        border-radius: 50px;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transition: 0.1s ease;
+        z-index: -1;
+      }
+      .keypress {
+        background: black;
+      }
+      nav {
+        background: pink;
+        width: 100%;
+        position: fixed;
+        top: -50px;
+        padding: 0px;
+        margin: 0px;
+        transition: 1s;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+      }
+      ul a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="click-event box">
+      <h4>Quelle est la capitale de la suisse ?</h4>
+      <button id="btn-1">Berne</button>
+      <button id="btn-2">Zurich</button>
+      <p>La bonne réponse est Berne</p>
+    </div>
+    <div class="mousseevent"></div>
+    <div class="keypress">
+      <h1>Vous appuiyer sur la touche :</h1>
+    </div>
+    <nav>
+      <ul>
+        <a href="#"><li>Acceuil</li></a>
+        <a href="#"><li>Service</li></a>
+        <a href="#"><li>Contact</li></a>
+      </ul>
+    </nav>
+    <form action="post" class="formulaire">
+      <input type="text" placeholder="Entrez votre nom" />
+      <select>
+        <option value="">Séléctionner language favoris :</option>
+        <option value="javascript">javascript</option>
+        <option value="php">php</option>
+        <option value="html5">html5</option>
+        <option value="css3">css3</option>
+        <option value="boostrap">boostrap</option>
+      </select>
+      <input type="checkbox" id="check" /><label for="check" style="color: black;">Accepter les conditions générales.</label>
+      <input type="submit" value="valider" />
+      <div></div>
+    </form>
+    <script src="./scripts.js"></script>
+  </body>
+</html>

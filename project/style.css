@@ -1,0 +1,27 @@
+
+
+#flex-container
+{
+    display: flex;
+    align-content: flex-start;
+    height: 600px;
+    background-color: DodgerBlue;
+    position: relative;
+}
+
+.element
+{
+    background-color: #f1f1f1;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 30px;
+}
+
+#element_float
+{
+    position: relative;
+    top: 200px;
+}

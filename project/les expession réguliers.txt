@@ -1,0 +1,21 @@
+^ commence par
+$ fini par
+^$ commence et fini par 
+test contient n'importe ou "test"
+* un ou aucun
++ un ou plusieur fois
+? un seul ou aucun
+{2} nombre d'occurence 2
+{2,} nombre d'ocurrence d'au moin 2
+{3,5} nombre d'ocurrence 3 à 5
+(bc) séquence de caractère "bc"
+a|b contient a ou b
+. caractère unique
+[ab] "a" ou "b"
+[a-z] lettre minuscules comprises entre a et z
+[A-Z] lettre majiscules comprises entre a et z
+[0-9] chifres compris entre 0 à 9
+[a-zA-Z0-9] chaine de caractères lettre ou chiffres
+[^a] ne contient pas "a"
+\ utilisé caractère spécial
+[caractères spécial] on peu uitiliser les caractères spécial sans "\
