@@ -1,15 +1,35 @@
+var countDisplay = document.querySelector("h3");
+var count = 0;
 setInterval(function () {
-  document.querySelector("body").innerHTML = "<span></span>";
-  document.querySelector("span").classList.add("bubble");
+  var nouveauSpan;
+  nouveauSpan = document.createElement("span");
+  nouveauSpan.classList.add("bubble");
+  document.body.appendChild(nouveauSpan);
+
   var size = Math.random() * 200 + 100 + "px";
 
-  document.querySelector("span").style.height = size;
-  document.querySelector("span").style.width = size;
+  nouveauSpan.style.height = size;
+  nouveauSpan.style.width = size;
 
-  document.querySelector("span").style.left = Math.random() * 100 + "%";
-  document.querySelector("span").style.top = Math.random() * 100 + 50 + "%";
-
+  nouveauSpan.style.left = Math.random() * 100 + "%";
+  nouveauSpan.style.top = Math.random() * 100 + 50 + "%";
+  var plusMinus;
+  if (Math.random() > 0.5) {
+    plusMinus = 1;
+  } else {
+    plusMinus = -1;
+  }
   document
     .querySelector("span")
-    .style.setProperty("--left", Math.random() * 100 + "%");
-}, 1000);
+    .style.setProperty("--left", Math.random() * 100 * plusMinus + "%");
+
+  nouveauSpan.addEventListener("click", function () {
+      count++;
+      countDisplay.textContent=count;
+    nouveauSpan.remove();
+  });
+
+  setTimeout(function () {
+    nouveauSpan.remove();
+  }, 8000);
+}, 500);
