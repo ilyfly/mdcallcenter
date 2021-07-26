@@ -225,6 +225,29 @@ console.log(navigator.userAgent);
 // window.history.back();
 
 // SetProperty :
-window.addEventListener("mousemove", function (e) {
-  document.querySelector('nav').style.setProperty("--x",e.layerX+"px")
-});
+// window.addEventListener("mousemove", function (e) {
+//   document.querySelector("nav").style.setProperty("--x", e.layerX + "px");
+// });
+
+// Type de donnée :
+var string = "chaine"; //string
+var number = 25; //number
+var boolean = true; //boolean
+var maVariable; //undefined
+var maVariable = null; //object
+
+console.log(typeof maVariable);
+
+// Tableaux :
+
+var array = ["Casablanca", "24", true, [1.2], { nom: "Denis" }];
+
+//console.log(array[0][3].nom);
+
+var object = {
+  pseudo:"denis",
+  age:33,
+  technos:["javascript","React","NodeJs"]
+};
+
+console.log(object);
