@@ -53,6 +53,23 @@
         margin: 0px;
         transition: 1s;
       }
+      nav ::after {
+        content: "";
+        height: 150px;
+        width: 150px;
+        background: radial-gradient(circle closest-side, white, transparent);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        transition: 0.25s;
+        z-index: 20;
+        opacity: 0;
+        left: var (--x);
+        top: var (--y);
+      }
+      nav:hover::after {
+        opacity: 1;
+        background: red;
+      }
       ul {
         list-style-type: none;
         display: flex;
@@ -94,7 +111,11 @@
         <option value="css3">css3</option>
         <option value="boostrap">boostrap</option>
       </select>
-      <input type="checkbox" id="check" /><label for="check" style="color: black;">Accepter les conditions générales.</label>
+      <input type="checkbox" id="check" /><label
+        for="check"
+        style="color: black"
+        >Accepter les conditions générales.</label
+      >
       <input type="submit" value="valider" />
       <div></div>
     </form>

@@ -220,4 +220,11 @@ console.log(location.pathname);
 
 console.log(navigator.userAgent);
 
- 
+// History
+// console.log(window.history);
+// window.history.back();
+
+// SetProperty :
+window.addEventListener("mousemove", function (e) {
+  document.querySelector('nav').style.setProperty("--x",e.layerX+"px")
+});
