@@ -69,7 +69,11 @@ function add() {
 }
 add();
 SELECTOR: document.querySelector("h4").style.background = "yellow";
+
+//-----------------------------
 //CLICK EVENT :
+//-----------------------------
+
 document.querySelector(".box").addEventListener("click", () => {
   // document.querySelector("h4").style.background = "yellow";
   document.querySelector(".box").classList.toggle("click");
@@ -88,7 +92,9 @@ document.getElementById("btn-2").addEventListener("click", function () {
 
 /* <div> > #id > .class > baliseHTML */
 
+//-----------------------------
 // Mouse Events :
+//-----------------------------
 
 window.addEventListener("mousemove", function (e) {
   document.querySelector(".mousseevent").style.left = e.pageX + "px";
@@ -146,7 +152,9 @@ window.addEventListener("load", function () {
 
 console.log(document.getElementsByClassName("box"));
 
+//-----------------------------
 // ForEach :
+//-----------------------------
 
 document.querySelectorAll("box").forEach((element) => {
   element.addEventListener("click", function (e) {
@@ -154,13 +162,18 @@ document.querySelectorAll("box").forEach((element) => {
   });
 });
 
+//-----------------------------
 //addEventListner vs onclick :
+//-----------------------------
 
 document.body.onclick = function () {
   console.log("Arrêter de cliquez sur le Body! Grrrrr");
 };
 
+//-----------------------------
 //Bubbling => se déclanche à la fin
+//-----------------------------
+
 document.body.addEventListener(
   "click",
   function () {
@@ -168,7 +181,11 @@ document.body.addEventListener(
   },
   false
 );
+
+//-----------------------------
 //Usecapture => se déclanche au début
+//-----------------------------
+
 document.body.addEventListener(
   "click",
   function () {
@@ -177,17 +194,22 @@ document.body.addEventListener(
   true
 );
 
+//-----------------------------
 // Stop propagation
+//-----------------------------
 
 document.querySelector(".box").addEventListener("click", function (e) {
   alert("Stop propagation");
   e.stopPropagation();
 });
 
+//-----------------------------
 // removeEventListner :
+//-----------------------------
 
+//-----------------------------
 // BOM :
-
+//-----------------------------
 console.log("Height : " + window.innerHeight);
 console.log("ScrollY : " + window.scrollY);
 //window.open("http://google.com", "Cour js", "height=600,width=800");
@@ -208,7 +230,9 @@ document.body.addEventListener("click", function (e) {
   e.target.remove();
 });
 
+//-----------------------------
 // location :
+//-----------------------------
 
 console.log(location.href);
 console.log(location.host);
@@ -216,7 +240,9 @@ console.log(location.pathname);
 // console.log(location.search);
 //location.replace("http://google.co.ma");
 
+//-----------------------------
 // Navigator :
+//-----------------------------
 
 console.log(navigator.userAgent);
 
@@ -238,16 +264,131 @@ var maVariable = null; //object
 
 console.log(typeof maVariable);
 
+//-----------------------------
 // Tableaux :
+//-----------------------------
 
 var array = ["Casablanca", "24", true, [1.2], { nom: "Denis" }];
 
 //console.log(array[0][3].nom);
 
 var object = {
-  pseudo:"denis",
-  age:33,
-  technos:["javascript","React","NodeJs"]
+  pseudo: "denis",
+  age: 33,
+  technos: ["javascript", "React", "NodeJs"],
+  admin: false,
 };
-
+object.age = 30;
 console.log(object);
+
+var data = [
+  {
+    pseudo: "denis",
+    age: 35,
+    technos: ["javascript", "React", "NodeJs"],
+    admin: false,
+  },
+  {
+    pseudo: "sébastien",
+    age: 33,
+    technos: ["php", "jQuery", "css"],
+    admin: false,
+  },
+  {
+    pseudo: "jean",
+    age: 33,
+    technos: ["html", "php", "boostrap"],
+    admin: false,
+  },
+];
+
+console.log(data[2].pseudo[0]);
+
+//-----------------------------
+// Les structures de controle :
+//-----------------------------
+
+// IF ESLSE :
+
+if (data[0].age > data[1].age) {
+  console.log(data[0].pseudo + " est plus agé que " + data[1].pseudo);
+} else {
+  // valeur si faux
+}
+
+// if("valeur à tester") // valeur si vrai
+// else // valeur si faux
+
+//  While :
+var count = 0;
+while (count < 10) {
+  count++;
+  console.log("La valeur de count est de :" + count);
+}
+
+// FOR :
+for (i = 0; i.lenght; i++) {}
+
+//----------------------
+// Méthodes String :
+//----------------------
+var string = "chaine de carractère";
+
+typeof string;
+eval();
+parseInt();
+isNaN();
+string.length;
+string.indexOf(); //Retourne -1 s'il ne le connait pas
+string.slice();
+string.split("i");
+string.toLowerCase();
+string.toUpperCase();
+string.replace("javascript", "php");
+
+//---------------------------
+//Méthodes pour les Numbers :
+//---------------------------
+var number = 42.1234;
+
+number.toFixed(1);
+parseInt("43");
+parseFloat();
+Math.PI;
+Math.round(4.5);
+Math.floor(4.9);
+Math.ceil(4.1);
+Math.pow(2.7);
+Math.sqrt(16);
+
+console.log(Math.floor(Math.random() * 50));
+
+//---------------------------
+// Méthodes pour les Arrays :
+//---------------------------
+var array1 = ["javascript", "php", "python"];
+var array2 = ["Ruby", "Solidity"];
+
+array1.concat(array2);
+array1.join("-");
+array1.every((language) => language == "p");
+array1.some((language) => language == "p");
+array1.shift();
+array1.pop();
+array1.splice(1, 1, "C++");
+array1.push("élément à ajouet au tableau");
+
+// FILTER, SORT, MAP :
+array1.filter((number) => number > 10);
+array1.sort((a, b) => a - b);
+array1.map((number) => number);
+
+//----------------------------
+// Méthodes pour les Objects :
+//----------------------------
+
+// document.body.innerHTML = data.map(
+//   (user) => `<div><h5>${user.pseudo}</h5></div>`
+// );
+
+
